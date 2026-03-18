@@ -1,0 +1,57 @@
+
+mkdir SFPD-ServiceCalls
+cd SFPD-ServiceCalls
+
+npm init
+
+
+# server framework from MIT
+npm install express
+
+# Postgres client API low level
+npm install pg
+
+# Error	constants
+npm install pg-error-constants
+
+# http codes ??
+npm install http-status-codes
+# npm install http-response-status-code
+# npm install better-status-codes
+
+# logging
+npm install pino
+npm install pino-pretty
+npm install pino-http
+
+# start server
+export PINO_LOG_LEVEL_STDOUT='debug'
+export PINO_LOG_LEVEL_FILE='debug'
+export PINO_LOG_LEVEL='debug'
+DEBUG=express:* node src/server.js | npx pino-pretty
+
+curl localhost:8080/servicecalls
+
+curl localhost:8080/servicecalls/250321616
+
+curl -X DELETE localhost:8080/servicecalls/250321616
+
+python scripts/servicecallsload.py -i ./data/Law_Enforcement_Dispatched_Calls_for_Service__Closed_20260302.csv -c 4
+
+python scripts/servicecallsupdate.py -i ./data/Law_Enforcement_Dispatched_Calls_for_Service__Closed_20260302.csv -c 4
+
+
+# Start ssh agent
+eval "$(ssh-agent -s)"
+
+
+
+# GIT
+git init
+git add .
+git commit -am "initial commit"
+git remote add origin https://github.com/borderhill/SFPD-ServiceCalls.git
+
+# check
+git remote -v
+  

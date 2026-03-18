@@ -1,0 +1,21 @@
+{
+  "name": "sfpd-servicecalls",
+  "version": "1.0.0",
+  "description": "SFPD Service calls data service",
+  "license": "ISC",
+  "author": "Ari Rajamaki",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "http-status-codes": "^2.3.0",
+    "pg": "^8.20.0",
+    "pg-error-constants": "^1.0.0",
+    "pino": "^10.3.1",
+    "pino-http": "^11.0.0",
+    "pino-pretty": "^13.1.3"
+  }
+}
