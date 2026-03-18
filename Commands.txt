@@ -1,9 +1,5 @@
 
-mkdir SFPD-ServiceCalls
-cd SFPD-ServiceCalls
-
 npm init
-
 
 # server framework from MIT
 npm install express
@@ -40,18 +36,3 @@ python scripts/servicecallsload.py -i ./data/Law_Enforcement_Dispatched_Calls_fo
 
 python scripts/servicecallsupdate.py -i ./data/Law_Enforcement_Dispatched_Calls_for_Service__Closed_20260302.csv -c 4
 
-
-# Start ssh agent
-eval "$(ssh-agent -s)"
-
-
-
-# GIT
-git init
-git add .
-git commit -am "initial commit"
-git remote add origin https://github.com/borderhill/SFPD-ServiceCalls.git
-
-# check
-git remote -v
-  
