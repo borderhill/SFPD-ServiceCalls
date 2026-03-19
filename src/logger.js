@@ -13,8 +13,8 @@ const transport = pino.transport({
         {
             level: 'trace',
             target: 'pino-pretty',
-            options: {destination: process.stdout.fd}
-        }       
+            options: { destination: process.stdout.fd }
+        }
     ]
 });
 
@@ -26,7 +26,7 @@ const transport = pino.transport({
 // export const logger = pinologger.logger;
 
 const logger = pino(
-    { level: 'trace',},
+    { level: 'trace', },
     transport);
 
 export default logger;

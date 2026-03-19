@@ -5,7 +5,7 @@
 *   call_type_final_desc -> callTypeFinalDesc
 */
 function fromSQLColumnToProperty(str) {
-    return str.split('_').map(function(word, index) {
+    return str.split('_').map(function (word, index) {
         // first word to lowercase
         if (index == 0) {
             return word.toLowerCase();

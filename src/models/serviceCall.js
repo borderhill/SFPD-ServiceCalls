@@ -15,7 +15,7 @@ import logger from '../logger.js';
 ** values contains array: ['250321616', 'PD250062759', ...]
 */
 export function serviceCallNewEntryData(obj) {
-    logger.trace(obj,"Build new entry db query for service call");
+    logger.trace(obj, "Build new entry db query for service call");
     const map = new Map(Object.entries(obj));
     let sqlColumnsStr = "INSERT INTO service_call (";
     let valuesStr = " VALUES (";
@@ -87,7 +87,7 @@ export function ServiceCall(sqlRow) {
     return obj;
 }
 
-export default { 
+export default {
     serviceCallNewEntryData,
     serviceCallUpdateEntryData,
     ServiceCall
