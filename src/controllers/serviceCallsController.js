@@ -52,7 +52,7 @@ export const getServiceCalls = async (req, res) => {
     }
 };
 
-export const getServiceCallsWithId = async (req, res) => {
+export const getServiceCallWithId = async (req, res) => {
     try {
         const result = await pool.query(`SELECT * FROM service_call WHERE cad_number = ${req.params.cadNumber}`);
         if (result.rowCount > 0) {
@@ -115,7 +115,7 @@ export async function createServiceCall(req, res) {
     }
 };
 
-export const deleteServiceCallsWithId = async (req, res) => {
+export const deleteServiceCallWithId = async (req, res) => {
     try {
         const result = await pool.query(`DELETE FROM service_call WHERE cad_number = ${req.params.cadNumber}`);
         if (result.rowCount == 0) {
@@ -129,7 +129,7 @@ export const deleteServiceCallsWithId = async (req, res) => {
     }
 };
 
-export const updateServiceCallsWithId = async (req, res) => {
+export const updateServiceCallWithId = async (req, res) => {
     try {
         // build update query with the values
         const updateData = serviceCallUpdateEntryData(req.body);
