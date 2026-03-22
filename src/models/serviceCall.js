@@ -1,4 +1,4 @@
-import fromSQLColumnToProperty from './dbutil.js';
+import * as dbutil from './dbutil.js';
 import logger from '../logger.js';
 
 /* 
@@ -81,7 +81,7 @@ export function ServiceCall(sqlRow) {
     const map = new Map(Object.entries(sqlRow));
     let serviceCall = new Map();
     for (const key of map.keys()) {
-        serviceCall.set(fromSQLColumnToProperty(key), sqlRow[key])
+        serviceCall.set(dbutil.fromSQLColumnToPropertyName(key), sqlRow[key])
     }
     const obj = Object.fromEntries(serviceCall);
     return obj;
