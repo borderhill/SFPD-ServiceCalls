@@ -1,4 +1,4 @@
-import * as dbutil from './dbutil.js';
+import * as dbutil from '../utils/dbutils.js';
 import logger from '../logger.js';
 
 /* 
